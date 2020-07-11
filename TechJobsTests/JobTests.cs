@@ -30,9 +30,6 @@ namespace TechJobsTests
             Assert.IsTrue(testJob1.Id == testJob2.Id -1);
         }
 
-
-
-
         [TestMethod]    
         public void TestJobConstructorSetsAllFields()
         {
@@ -67,7 +64,7 @@ namespace TechJobsTests
 
             //Assert.IsTrue(index1 > -1);
             //Assert.AreEqual(testValue, testJob3.Id.ToString());
-            TestSingleJobFieldToString(testJob3, "ID:", testJob3.Id.ToString());
+            TestSingleJobFieldToString(testJob3, "ID: ", testJob3.Id.ToString());
             TestSingleJobFieldToString(testJob3, "Name:", testJob3.Name);
             TestSingleJobFieldToString(testJob3, "Employer:", testJob3.EmployerName.ToString());
             TestSingleJobFieldToString(testJob3, "Location:", testJob3.EmployerLocation.ToString());
@@ -96,7 +93,7 @@ namespace TechJobsTests
         [TestMethod]
         public void TestJobToStringOnlyID()
         {
-            Assert.AreEqual(testJob1.ToString(), "OOPS! This job does not seem to exist.");
+            Assert.AreEqual("\nID: 16\nOOPS! This job does not seem to exist.\n",testJob1.ToString());
         }
 
     }
